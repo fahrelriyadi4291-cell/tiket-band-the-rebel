@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Band - Raven Rock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .title-section {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .title-section h1 {
+      color: #ff2e2e;
+      letter-spacing: 4px;
+    }
+
+    .band-card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .band-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px red;
+    }
+
+    .band-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-danger fw-bold" href="index.html">EVRYTHNGELL POP PUNK</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html.html">Band</a></li>
+        <li class="nav-item"><a class="nav-link" href="index musik.html">musik</a></li>
+        <li class="nav-item"><a class="nav-link" href="index tour.html">Tour</a></li>
+        <li class="nav-item"><a class="nav-link" href="index contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- TITLE -->
+<section class="title-section">
+  <h1>MEET THE BAND</h1>
+  <p class="text-secondary">Kenali para personel di balik dentuman musik Evrythngell Pop Punk</p>
+</section>
+
+<!-- BAND MEMBERS -->
+<section class="container mb-5">
+  <div class="row g-4">
+
+    <div class="col-md-3">
+      <div class="band-card text-center">
+        <img src="foto the rebel.jpeg" class="band-img" alt="Vocalist">
+        <h4>Ipit</h4>
+        <p class="text-secondary">Lead Vocal</p>
+        <p>Karakter vokal kuat dan penuh emosi yang menjadi ciri khas pop punk.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="band-card text-center">
+        <img src="foto the rebel.jpeg" class="band-img" alt="Guitarist">
+        <h4>Aell</h4>
+        <p class="text-secondary">Lead Guitar</p>
+        <p>Master riff tajam dengan gaya permainan agresif dan modern.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="band-card text-center">
+        <img src="foto the rebel.jpeg" class="band-img" alt="Bassist">
+        <h4>Maul</h4>
+        <p class="text-secondary">Bass</p>
+        <p>Pondasi groove yang membuat musik Raven Rock hidup.</p>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="band-card text-center">
+        <img src="foto the rebel.jpeg" class="band-img" alt="Drummer">
+        <h4>Firman
+        <p class="text-secondary">Drummer</p>
+        <p>Beat cepat dan presisi tinggi sebagai penggerak utama band.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 THE REBELL POP PUNK | All Rights Reserved
+</footer>
+<script>
+  // Animasi muncul saat scroll
+  const cards = document.querySelectorAll(".band-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+
+  // Highlight menu aktif
+  document.querySelectorAll(".nav-link").forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

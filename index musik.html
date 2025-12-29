@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Music - Raven Rock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .page-title {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .page-title h1 {
+      color: #ff2e2e;
+      letter-spacing: 3px;
+    }
+
+    .music-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .music-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px red;
+    }
+
+    .music-title {
+      color: #ff2e2e;
+      font-size: 1.2rem;
+    }
+
+    .music-info {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-danger fw-bold" href="index.html">EVRYTHNGELLPOP PUNK</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html.html">Band</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index musik.html">Music</a></li>
+        <li class="nav-item"><a class="nav-link" href="index contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="index tour.html">Tour</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- TITLE -->
+<section class="page-title">
+  <h1>Our Music</h1>
+  <p class="text-secondary">Dengarkan karya terbaik dari The Rebel</p>
+</section>
+
+<!-- MUSIC LIST -->
+<section class="container mb-5">
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="music-card">
+        <h5 class="music-title">🔥 Muak tiap hari</h5>
+        <p class="music-info">Album: The Rebel (2024)</p>
+        <audio controls>
+          <source src="music/rise-of-fire.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="music-card">
+        <h5 class="music-title">⚡ Korupsi penggal mati</h5>
+        <p class="music-info">Album: The Rebel (2024)</p>
+        <audio controls>
+          <source src="music/broken-chains.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="music-card">
+        <h5 class="music-title">🔥 Hampir gila</h5>
+        <p class="music-info">Album: The Rebel (2023)</p>
+        <audio controls>
+          <source src="music/no-turning-back.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="music-card">
+        <h5 class="music-title">⚡ Mati muda</h5>
+        <p class="music-info">Album: Jenny (2023)</p>
+        <audio controls>
+          <source src="music/shadow-within.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 THE REBELL POP PUNK | All Rights Reserved
+</footer>
+<script>
+  const audios = document.querySelectorAll("audio");
+  const nowPlaying = document.getElementById("nowPlaying");
+
+  audios.forEach(audio => {
+    audio.addEventListener("play", () => {
+      audios.forEach(other => {
+        if (other !== audio) {
+          other.pause();
+        }
+      });
+      nowPlaying.textContent = "🎵 Now Playing: " + audio.dataset.title;
+    });
+
+    audio.addEventListener("ended", () => {
+      nowPlaying.textContent = "🎧 Tidak ada lagu yang diputar";
+    });
+  });
+
+  // Update tahun otomatis
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
